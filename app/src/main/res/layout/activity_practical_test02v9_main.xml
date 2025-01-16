@@ -32,4 +32,11 @@
         android:text="Results will appear here"
         android:paddingTop="16dp"
         android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/btnMaps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="MAPS" />
+
 </LinearLayout>

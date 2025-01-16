@@ -22,6 +22,8 @@ class PracticalTest02MainActivityv9 : AppCompatActivity() {
     private lateinit var btnFetch: Button
     private lateinit var tvResults: TextView
 
+    private lateinit var mapsButton: Button
+
     private val anagramService by lazy { createAnagramService() }
 
     @SuppressLint("NewApi")
@@ -33,6 +35,7 @@ class PracticalTest02MainActivityv9 : AppCompatActivity() {
         etMinLength = findViewById(R.id.etMinLength)
         btnFetch = findViewById(R.id.btnFetch)
         tvResults = findViewById(R.id.tvResults)
+        mapsButton = findViewById(R.id.btnMaps)
 
         // Configurăm receiver-ul pentru broadcast
         receiver = AnagramReceiver { anagrams ->
@@ -54,6 +57,11 @@ class PracticalTest02MainActivityv9 : AppCompatActivity() {
             } else {
                 tvResults.text = "Invalid input. Please try again."
             }
+        }
+
+        mapsButton.setOnClickListener {
+            val intent = Intent(this, MapsActivity::class.java)
+            startActivity(intent)
         }
     }
 
